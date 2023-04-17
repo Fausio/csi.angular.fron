@@ -15,7 +15,7 @@ export class SideNavComponent {
 
   toggleCollapse(): void {
 
-    this.collapse = true;
+    this.collapse = !  this.collapse ;
   }
   closseToggleCollapse(): void {
 

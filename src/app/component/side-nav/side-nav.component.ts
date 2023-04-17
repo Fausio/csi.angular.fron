@@ -9,7 +9,16 @@ import { navbarData } from './nav-data';
 export class SideNavComponent {
 
 
-  collapse = false;
-  navDate =  navbarData;
-  
+  collapse = true;
+  navDate = navbarData;
+
+
+  toggleCollapse(): void {
+
+    this.collapse = true;
+  }
+  closseToggleCollapse(): void {
+
+    this.collapse = false;
+  }
 }

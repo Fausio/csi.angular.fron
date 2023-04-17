@@ -14,7 +14,7 @@
 
         display: flex;
         align-items: center;
-        padding: 0.938rem 0.938rem 0 0.938rem;
+        padding: 0.938rem 0.938rem 0.938rem 0.938rem;
         width: 100%;
 
         .logo {
@@ -70,8 +70,8 @@
 
     .sidenav-nav-item {
         width: 100%;
-        margin-bottom: 0.625rem;
-
+        margin-bottom: 0.625rem ;
+        padding: 0.200rem 0.938rem 0.938rem 0.938rem;
         .sidenav-nav-link {
             display: flex;
             align-items: center;

@@ -14,11 +14,15 @@ import { AppComponent } from './app.component';
 import { SideNavComponent } from './component/menu/side-nav/side-nav.component';
 import { BodyComponent } from './component/body/body.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { HouseholdComponent } from './component/household/household.component';
+import { BeneficiaryComponent } from './component/beneficiary/beneficiary.component';
+import { PartnerComponent } from './component/partner/partner.component';
+import { SiteComponent } from './component/site/site.component';
 
 @NgModule({
   declarations: [
     AppComponent,  
-    SideNavComponent, BodyComponent, DashboardComponent
+    SideNavComponent, BodyComponent, DashboardComponent, HouseholdComponent, BeneficiaryComponent, PartnerComponent, SiteComponent
   ],
   imports: [
     BrowserModule,

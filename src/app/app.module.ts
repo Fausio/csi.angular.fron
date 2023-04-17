@@ -1,6 +1,7 @@
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {RouterModule} from '@angular/router';
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle'; 
 import { MatToolbarModule } from '@angular/material/toolbar'; 
@@ -28,7 +29,8 @@ import { SiteComponent } from './component/site/site.component';
     BrowserModule,
     NgbModule,
     AppRoutingModule,
-
+    RouterModule,
+    
     MatSlideToggleModule,
     MatSidenavModule, 
     MatToolbarModule

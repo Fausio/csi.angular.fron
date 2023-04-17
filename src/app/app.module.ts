@@ -1,17 +1,18 @@
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {RouterModule} from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatSlideToggleModule } from '@angular/material/slide-toggle'; 
-import { MatToolbarModule } from '@angular/material/toolbar'; 
-import { MatSidenavModule } from '@angular/material/sidenav'; 
-import { MatIconModule } from '@angular/material/icon'; 
-import { MatListModule } from '@angular/material/list'; 
-import { MatButtonModule } from '@angular/material/button'; 
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';  
+import { AppComponent } from './app.component';
 import { SideNavComponent } from './component/side-nav/side-nav.component';
 import { BodyComponent } from './component/body/body.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
@@ -23,7 +24,7 @@ import { ReportComponent } from './component/report/report.component';
 
 @NgModule({
   declarations: [
-    AppComponent,  
+    AppComponent,
     SideNavComponent, BodyComponent, DashboardComponent, HouseholdComponent, BeneficiaryComponent, PartnerComponent, SiteComponent, ReportComponent
   ],
   imports: [
@@ -31,11 +32,11 @@ import { ReportComponent } from './component/report/report.component';
     NgbModule,
     AppRoutingModule,
     RouterModule,
-    
-    MatSlideToggleModule,
-    MatSidenavModule, 
-    MatToolbarModule
 
+    MatSlideToggleModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

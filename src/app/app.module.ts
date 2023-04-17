@@ -19,11 +19,12 @@ import { HouseholdComponent } from './component/household/household.component';
 import { BeneficiaryComponent } from './component/beneficiary/beneficiary.component';
 import { PartnerComponent } from './component/partner/partner.component';
 import { SiteComponent } from './component/site/site.component';
+import { ReportComponent } from './component/report/report.component';
 
 @NgModule({
   declarations: [
     AppComponent,  
-    SideNavComponent, BodyComponent, DashboardComponent, HouseholdComponent, BeneficiaryComponent, PartnerComponent, SiteComponent
+    SideNavComponent, BodyComponent, DashboardComponent, HouseholdComponent, BeneficiaryComponent, PartnerComponent, SiteComponent, ReportComponent
   ],
   imports: [
     BrowserModule,

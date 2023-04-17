@@ -23,7 +23,10 @@ export const navbarData = [
     
     {
         routeLink: 'Partner',
-        icon: 'fal fa-user-shield',
+        icon: 'fal fa-user-shield', 
         label: 'Partner'
     },
 ]
+
+
+/* https://fontawesome.com/v5/icons/user-shield?f=classic&s=solid */

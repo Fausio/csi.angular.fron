@@ -70,8 +70,9 @@
 
     .sidenav-nav-item {
         width: 100%;
-        margin-bottom: 0.625rem ;
+        margin-bottom: 0.625rem;
         padding: 0.200rem 0.938rem 0.938rem 0.938rem;
+
         .sidenav-nav-link {
             display: flex;
             align-items: center;
@@ -109,4 +110,12 @@
 }
 
 
- 
+.active {
+
+    background-color: #fff;
+
+    .sidenav-link-con,
+    .sidenav-link-text {
+        color: #000;
+    }
+}

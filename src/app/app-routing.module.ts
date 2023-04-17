@@ -6,8 +6,8 @@ import { BeneficiaryComponent } from './component/beneficiary/beneficiary.compon
 
 const routes: Routes = [
 
-  { path: '', redirectTo: 'dashboard' },
-  { path: 'dashboard', component: DashboardComponent, pathMatch: 'full' },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'household', component: HouseholdComponent },
   { path: 'beneficiary', component: BeneficiaryComponent }
 

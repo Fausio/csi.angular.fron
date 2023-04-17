@@ -10,6 +10,6 @@ export class SideNavComponent {
 
 
   collapse = false;
-  navDate =  navbarData
+  navDate =  navbarData;
   
 }

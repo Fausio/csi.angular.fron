@@ -1,4 +1,3 @@
-<p>side-nav works!</p>
 <div class="sidenav">
     <div class="logo-container">
         <button class="logo"></button>
@@ -8,6 +7,7 @@
 
     <ul class="sidenav-nav">
         <li class="sidenav-nav-item" *ngFor="let data of navDate">
+
             <a class="sidenav-nav-link" [routerLink]="[data.routeLink]">
                 <i class="sidenav-link-con" [class]="data.icon"></i>
                 <span class="sidenav-link-text" *ngIf="collapse">

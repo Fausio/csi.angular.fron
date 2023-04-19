@@ -1,4 +1,6 @@
-export interface householdDTO {
+ 
+
+export interface householdDTO   {
 
     id: number;
     guid: string;
@@ -9,5 +11,5 @@ export interface householdDTO {
     address: string;
     partnerId:number; 
  
-  }
+}
    

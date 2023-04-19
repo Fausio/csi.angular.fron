@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
-import { householdDTO } from '../interface/household.model';
+import { environment } from 'src/environments/environment'; 
 import { HttpClient } from '@angular/common/http';
+import { householdPage } from '../interface/HouseholdPage';
 
 @Injectable({
   providedIn: 'root'
@@ -13,12 +13,12 @@ export class HouseholdService {
 
   private baseUrl = environment.apiBaseUrl;
 
-  public read(): Observable<householdDTO[]> {
-    return this.http.get<householdDTO[]>(`${this.baseUrl}/household`);
+  public read(): Observable<householdPage> {
+    return this.http.get<householdPage>(`${this.baseUrl}/household`);
   }
 
-/*   public ReadById(id: number): Observable<Employee> {
-    return this.http.get<Employee>(`${this.backEndServerUrl}/employee/read/` + id)
-} */
-
+  public paging(pageNumber: number): Observable<householdPage> {
+    return this.http.get<householdPage>(`${this.baseUrl}/household?PageNumber=`+pageNumber );
+}
+ // ?PageNumber=1
 }

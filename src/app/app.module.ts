@@ -1,4 +1,4 @@
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+ 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 
+import {HttpClientModule } from  '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SideNavComponent } from './component/side-nav/side-nav.component';
@@ -21,6 +22,7 @@ import { BeneficiaryComponent } from './component/beneficiary/beneficiary.compon
 import { PartnerComponent } from './component/partner/partner.component';
 import { SiteComponent } from './component/site/site.component';
 import { ReportComponent } from './component/report/report.component';
+import { HouseholdService } from './service/household.service';
 
 @NgModule({
   declarations: [
@@ -29,16 +31,18 @@ import { ReportComponent } from './component/report/report.component';
   ],
   imports: [
     BrowserModule,
-    NgbModule,
+   
     AppRoutingModule,
     RouterModule,
 
     MatSlideToggleModule,
     MatSidenavModule,
     MatToolbarModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HouseholdService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,6 +5,8 @@ export interface pagination {
 
     pageIndex:number;
     totalPages:number;   
+    
     eachTotalPages:number[];
+    activeOrCurrentPage: string[]; // string for active css property : comes from back-end
   }
    

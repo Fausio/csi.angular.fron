@@ -16,14 +16,18 @@ export class HouseholdComponent implements OnInit {
 
   public models: householdPage;
   public current: number
-  public dashboardLink: string = 'dashboard';
+  public dashboardLink: string = 'dashboard'; 
+  public activeCurrentPage: string = 'page-item mr-2';
+  
 
   Read(): void {
     this.householdService.read().subscribe(
       (response: householdPage) => {
 
         this.models = response;
-      
+        this.current = 1;
+        
+        console.log(" this.models",  this.models);
       },
       (error: HttpErrorResponse) => {
         console.log("erro in HouseholdComponent.Read()", error.message)
@@ -33,16 +37,22 @@ export class HouseholdComponent implements OnInit {
   }
 
   public GotoPage(pageNumber: number): void {
+     
+
+
     this.householdService.paging(pageNumber).subscribe(
       (response: householdPage) => {
 
         this.models = response;
         this.current = pageNumber
+
+        console.log(" this.models",  this.models);
       },
       (error: HttpErrorResponse) => {
         console.log("erro in HouseholdComponent.paging()", error.message)
       }
     )
+
   }
 
 
@@ -58,11 +68,14 @@ export class HouseholdComponent implements OnInit {
     this.GotoPage(this.current)
   }
 
+
   ngOnInit() {
-    this.Read();
+   
   }
 
-
+  ngAfterViewInit(){
+    this.Read();
+  }
 
   public open(modal: any): void {
     this.modalService.open(modal);

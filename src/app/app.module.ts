@@ -23,11 +23,13 @@ import { PartnerComponent } from './component/partner/partner.component';
 import { SiteComponent } from './component/site/site.component';
 import { ReportComponent } from './component/report/report.component';
 import { HouseholdService } from './service/household.service';
+import { CardComponent } from './component/helper/card/card.component';
+import { CreateComponent } from './component/housedold/create/create.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SideNavComponent, BodyComponent, DashboardComponent, HouseholdComponent, BeneficiaryComponent, PartnerComponent, SiteComponent, ReportComponent
+    SideNavComponent, BodyComponent, DashboardComponent, HouseholdComponent, BeneficiaryComponent, PartnerComponent, SiteComponent, ReportComponent, CardComponent, CreateComponent
   ],
   imports: [
     BrowserModule,

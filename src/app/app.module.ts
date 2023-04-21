@@ -25,12 +25,20 @@ import { SiteComponent } from './component/site/site.component';
 import { ReportComponent } from './component/report/report.component';
 import { HouseholdService } from './service/household.service';
 import { CardComponent } from './component/helper/card/card.component';
-import { CreateComponent } from './component/housedold/create/create.component';
+import { CreateHouseholdComponent } from './component/household/create-household/create-household.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SideNavComponent, BodyComponent, DashboardComponent, HouseholdComponent, BeneficiaryComponent, PartnerComponent, SiteComponent, ReportComponent, CardComponent, CreateComponent
+    SideNavComponent,
+     BodyComponent, 
+     DashboardComponent, 
+     HouseholdComponent,
+      BeneficiaryComponent,
+      PartnerComponent,
+       SiteComponent, 
+       ReportComponent, 
+       CardComponent, CreateHouseholdComponent
   ],
   imports: [
     BrowserModule,

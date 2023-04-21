@@ -1,7 +1,7 @@
 <nav aria-label="breadcrumb">
      <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a [routerLink]='dashboardLink'>Home</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Household</li>
+          <li class="breadcrumb-item"><a [routerLink]="['/','dashboard']">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Agregados</li> 
      </ol>
 </nav>
 
@@ -9,16 +9,30 @@
 
 <div class="card mb-2">
      <div class="card-body">
-          <h4>Household page <span class="badge badge-secondary">Search</span></h4>
+          <h4>Página de agregados <span class="badge badge-secondary">Pesquisa</span></h4>
      </div>
 </div>
 
 <div class="card mb-2">
      <div class="card-body">
 
-          <div class="row ">
-               <div class="col-4  mb-2">
-                    <input [(ngModel)]="searchText" type="text" class="form-control" placeholder="Pesquisa"  (keyup)="onKey($event)" >
+
+          <div class="row mb-2">
+               <div class="col-auto mr-auto">
+                    <input [(ngModel)]="searchText" type="text" class="form-control" placeholder="Pesquisa"
+                         (keyup)="onKey($event)">
+               </div>
+
+               <div class="col-auto">
+                    <a   [routerLink]="['/', 'household-create']" 
+                         class="btn btn-success text-white btn-sm" 
+                         data-toggle="tooltip"  
+                         title="Adicionar um novo Agregado">
+                       
+                              <i class="far fa-plus-circle"></i>
+                        
+                    </a>
+
                </div>
           </div>
 

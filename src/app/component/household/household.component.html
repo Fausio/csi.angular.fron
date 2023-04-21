@@ -18,7 +18,7 @@
 
           <div class="row ">
                <div class="col-4  mb-2">
-                    <input type="text" class="form-control" placeholder="Pesquisa" >
+                    <input [(ngModel)]="searchText" type="text" class="form-control" placeholder="Pesquisa"  (keyup)="onKey($event)" >
                </div>
           </div>
 

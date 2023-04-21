@@ -16,9 +16,10 @@ export class HouseholdComponent implements OnInit {
 
   public models: householdPage;
   public current: number
-  public dashboardLink: string = 'dashboard'; 
+  public dashboardLink: string = 'dashboard';
   public activeCurrentPage: string = 'page-item mr-2';
-  
+  public searchText: string = '';
+
 
   Read(): void {
     this.householdService.read().subscribe(
@@ -26,8 +27,8 @@ export class HouseholdComponent implements OnInit {
 
         this.models = response;
         this.current = 1;
-        
-        console.log(" this.models",  this.models);
+
+        console.log(" this.models", this.models);
       },
       (error: HttpErrorResponse) => {
         console.log("erro in HouseholdComponent.Read()", error.message)
@@ -37,7 +38,7 @@ export class HouseholdComponent implements OnInit {
   }
 
   public GotoPage(pageNumber: number): void {
-     
+
 
 
     this.householdService.paging(pageNumber).subscribe(
@@ -46,7 +47,7 @@ export class HouseholdComponent implements OnInit {
         this.models = response;
         this.current = pageNumber
 
-        console.log(" this.models",  this.models);
+        console.log(" this.models", this.models);
       },
       (error: HttpErrorResponse) => {
         console.log("erro in HouseholdComponent.paging()", error.message)
@@ -58,27 +59,40 @@ export class HouseholdComponent implements OnInit {
 
   public NextPage(): void {
 
-    this.current= ( this.current + 1)
+    this.current = (this.current + 1)
     this.GotoPage(this.current)
   }
 
   public BackPage(): void {
 
-    this.current= (  this.current - 1)
+    this.current = (this.current - 1)
     this.GotoPage(this.current)
   }
 
 
   ngOnInit() {
-   
-  }
-
-  ngAfterViewInit(){
     this.Read();
   }
 
-  public open(modal: any): void {
-    this.modalService.open(modal);
+  onKey(event: Event): void {
+
+    console.log("onKey start")
+
+    this.householdService.search(this.searchText).subscribe(
+      (response: householdPage) => {
+
+        console.log("onKey core",response);
+        this.models = response;
+        this.current = 1;
+
+      },
+      (error: HttpErrorResponse) => {
+        console.log("erro in HouseholdComponent.onKey()", error.message)
+      }
+    )
+
+    console.log("onKey end")
+
   }
 
 }

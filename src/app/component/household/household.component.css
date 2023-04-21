@@ -1,0 +1,5 @@
+li.active .page-link {
+
+    border-color: rgb(41, 39, 39);
+    background-color: rgb(41, 39, 39) !important;
+}

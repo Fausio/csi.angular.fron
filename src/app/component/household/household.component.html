@@ -68,7 +68,7 @@
                     </li>
 
                     <div *ngFor="let data of models?.eachTotalPages; let indexOfelement=index;">
-                         <li [ngClass]="models.activeOrCurrentPage[indexOfelement]">
+                         <li class="bfli" [ngClass]="models.activeOrCurrentPage[indexOfelement]">
                               <a class="page-link" (click)="GotoPage(data)">
                                    {{data}} 
                               </a>

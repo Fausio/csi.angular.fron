@@ -1,9 +1,9 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { householdPage } from 'src/app/interface/HouseholdPage';
-import { householdDTO } from 'src/app/interface/household.model';
-import { HouseholdService } from 'src/app/service/household.service';
+import { householdPage } from 'src/app/interface/household/householdPage';
+import { householdDTO } from 'src/app/interface/household/household.model';
+import { HouseholdService } from 'src/app/service/household/household.service';
 
 @Component({
   selector: 'app-household',

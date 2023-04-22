@@ -1,4 +1,4 @@
- 
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
@@ -23,7 +23,7 @@ import { BeneficiaryComponent } from './component/beneficiary/beneficiary.compon
 import { PartnerComponent } from './component/partner/partner.component';
 import { SiteComponent } from './component/site/site.component';
 import { ReportComponent } from './component/report/report.component';
-import { HouseholdService } from './service/household.service';
+import { HouseholdService } from './service/household/household.service';
 import { CardComponent } from './component/helper/card/card.component';
 import { CreateHouseholdComponent } from './component/household/create-household/create-household.component';
 
@@ -31,13 +31,13 @@ import { CreateHouseholdComponent } from './component/household/create-household
   declarations: [
     AppComponent,
     SideNavComponent,
-     BodyComponent, 
-     DashboardComponent, 
+     BodyComponent,
+     DashboardComponent,
      HouseholdComponent,
       BeneficiaryComponent,
       PartnerComponent,
-       SiteComponent, 
-       ReportComponent, 
+       SiteComponent,
+       ReportComponent,
        CardComponent, CreateHouseholdComponent
   ],
   imports: [

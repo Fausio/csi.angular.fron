@@ -26,9 +26,7 @@ export class HouseholdComponent implements OnInit {
       (response: householdPage) => {
 
         this.models = response;
-        this.current = 1;
-
-        console.log(" this.models", this.models);
+        this.current = 1; 
       },
       (error: HttpErrorResponse) => {
         console.log("erro in HouseholdComponent.Read()", error.message)
@@ -45,9 +43,8 @@ export class HouseholdComponent implements OnInit {
       (response: householdPage) => {
 
         this.models = response;
-        this.current = pageNumber
-
-        console.log(" this.models", this.models);
+        this.current = pageNumber 
+        
       },
       (error: HttpErrorResponse) => {
         console.log("erro in HouseholdComponent.paging()", error.message)

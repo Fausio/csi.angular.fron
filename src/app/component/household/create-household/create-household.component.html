@@ -20,17 +20,18 @@
       <legend class="w-auto mb-0" style="font-size: 14px;">Formuário do agregado</legend>
 
 
-      <form class="m-2" [formGroup]="modelForm" >
+      <form class="m-2" [formGroup]="modelForm">
         <fieldset class="border p-1">
           <legend class="w-auto mb-0 " style="font-size: 14px;">Agregado</legend>
           <div class="form-row ml-2">
             <div class="form-group col-md-4">
               <label for="name">Nome</label>
-              <input  formControlName="name" type="text" class="form-control" id="name" placeholder="Nome do agregado">
+              <input formControlName="name" type="text" class="form-control" id="name" placeholder="Nome do agregado">
             </div>
             <div class="form-group col-md-4">
               <label for="Endereço">Endereço</label>
-              <input  name="address" type="email" class="form-control" id="Endereço" placeholder="Endereço">
+              <input formControlName="address" name="address" type="texte" class="form-control" id="Endereço"
+                placeholder="Endereço">
             </div>
           </div>
 
@@ -38,56 +39,57 @@
           <div class="form-row ml-2">
             <div class="form-group col-md-1">
               <label for="Bloco">Bloco</label>
-              <input type="number" class="form-control" id="Bloco" placeholder="Bloco">
+              <input formControlName="block" type="number" class="form-control" id="Bloco" placeholder="Bloco">
             </div>
             <div class="form-group col-md-3">
               <label for="Vizinhança">Vizinhança</label>
-              <input type="text" class="form-control" id="Vizinhança" placeholder="Vizinhança">
+              <input formControlName="neighborhoodName" type="text" class="form-control" id="Vizinhança"
+                placeholder="Vizinhança">
             </div>
             <div class="form-group col-md-4">
               <label for="closeplace">Lugar perto de casa</label>
-              <input type="email" class="form-control" id="closeplace" placeholder="Lugar perto de casa">
+              <input formControlName="closePlaceToHome" type="texte" class="form-control" id="closeplace"
+                placeholder="Lugar perto de casa">
             </div>
           </div>
 
           <div class="form-row ml-2">
             <div class="form-group col-md-2">
               <label for="Telefone">Telefone</label>
-              <input type="number" class="form-control" id="inputEmail4" placeholder="Telefone">
+              <input formControlName="familyPhoneNumber" type="number" class="form-control" id="inputEmail4"
+                placeholder="Telefone">
             </div>
             <div class="form-group col-md-3">
               <label for="inputState">Chefe do agregado</label>
-              <select id="inputState" class="form-control">
+              <select formControlName="familyHeadId" id="inputState" class="form-control">
                 <option selected>Selecione...</option>
-                <option>...</option>
+
+                <option *ngFor="let dropdown of readFamilyHeadDropdown" value="{{dropdown.id}}">{{dropdown.description}}
+                </option>
               </select>
             </div>
           </div>
 
-          <div class="form-row ">
-            <div class="form-group ml-3">
-              <div class="form-check">
-                <input class="form-check-input " type="checkbox" id="orref">
-                <label class="form-check-label" for="orref">
-                  Outras Origens de refêrencia
-                </label>
-              </div>
-            </div>
-
-          </div>
 
           <div class="form-row ml-2">
-            <div class="form-group col-md-4">
-              <label for="inputCity">Origen de refêrencia</label>
-              <input type="text" class="form-control" id="inputCity">
-            </div>
+
             <div class="form-group col-md-3">
               <label for="inputState">Origen de refêrencia</label>
-              <select id="inputState" class="form-control">
+              <select formControlName="familyOriginRefId" id="inputState" class="form-control">
                 <option selected>Selecione...</option>
-                <option>...</option>
+                <option *ngFor="let dropdown of readFamilyOriginRefDropdown" value="{{dropdown.id}}">
+                  {{dropdown.description}}
+                </option>
               </select>
             </div>
+
+            <div class="form-group col-md-4">
+              <label for="inputCity">Outras Origens de refêrencia</label>
+              <input formControlName="otherFamilyOriginRef" type="text" class="form-control" id="inputCity">
+            </div>
+
+
+
           </div>
         </fieldset>
         <fieldset class="border p-1">
@@ -95,15 +97,15 @@
           <div class="form-row ml-2">
             <div class="form-group col-md-3">
               <label for="inputState">Activista</label>
-              <select id="inputState" class="form-control">
+              <select formControlName="partnerId" id="inputState" class="form-control">
                 <option selected>Selecione...</option>
-                <option>...</option>
+                <option *ngFor="let dropdown of readPartnersDropdown" value="{{dropdown.id}}">
+                  {{dropdown.description}}
+                </option>
               </select>
             </div>
           </div>
         </fieldset>
-
-
       </form>
 
     </fieldset>
@@ -115,11 +117,8 @@
 
     <fieldset class="border p-1">
       <legend class="w-auto mb-0" style="font-size: 14px;">Ações</legend>
-      <button (click)="onCreate()" 
-               type="button" 
-              class="btn btn-success text-white btn-sm mb-2 ml-2"
-              data-toggle="tooltip" 
-              title="Gravar o Agregado">
+      <button (click)="onCreate()" type="button" class="btn btn-success text-white btn-sm mb-2 ml-2"
+        data-toggle="tooltip" title="Gravar o Agregado">
 
         <i class="fal fa-save"></i>
 

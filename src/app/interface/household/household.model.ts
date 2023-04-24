@@ -14,6 +14,8 @@ export interface householdDTO {
     FamilyPhoneNumber: string;
     ClosePlaceToHome: string;
 
+    otherFamilyOriginRef: string;
+
     partnerId: number;
     FamilyHeadId: number;
     FamilyOriginRefId: number;

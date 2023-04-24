@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -45,6 +46,8 @@ import { CreateHouseholdComponent } from './component/household/create-household
     FormsModule,
     AppRoutingModule,
     RouterModule,
+
+    ReactiveFormsModule,
 
     MatSlideToggleModule,
     MatSidenavModule,

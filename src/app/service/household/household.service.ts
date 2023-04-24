@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { householdPage } from '../../interface/household/householdPage';
+import { drodown } from 'src/app/interface/dto/drodown';
 
 @Injectable({
   providedIn: 'root'
@@ -23,4 +24,20 @@ export class HouseholdService {
   public search(searchTxt: string): Observable<householdPage> {
     return this.http.get<householdPage>(`${this.baseUrl}/Household/search?search=` + searchTxt);
   }
+
+
+  public readFamilyHead(): Observable<drodown[]> {
+    return this.http.get<drodown[]>(`${this.baseUrl}/Household/ReadFamilyHead`);
+  }
+
+  public readFamilyOriginRef(): Observable<drodown[]> {
+    return this.http.get<drodown[]>(`${this.baseUrl}/Household/ReadFamilyOriginRef`);
+  }
+
+  public readPartners(): Observable<drodown[]> {
+    return this.http.get<drodown[]>(`${this.baseUrl}/Household/ReadPartners`);
+  }
+
+
+  
 }

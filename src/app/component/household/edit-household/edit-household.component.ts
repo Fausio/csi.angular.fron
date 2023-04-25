@@ -1,23 +1,32 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, Injectable, Injector, OnInit, ErrorHandler } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { dropdown } from 'src/app/interface/dto/dropdown';
 import { householdDTO } from 'src/app/interface/household/household.model';
 import { HouseholdService } from 'src/app/service/household/household.service';
 import { formatDate } from '@angular/common'
+import { ToastrService } from 'ngx-toastr';
+import { Subject, delay } from 'rxjs';
+
+
 
 @Component({
   selector: 'app-edit-household',
   templateUrl: './edit-household.component.html',
   styleUrls: ['./edit-household.component.css']
 })
+@Injectable()
 export class EditHouseholdComponent implements OnInit {
 
-  constructor(private householdService: HouseholdService, private fb: FormBuilder, private route: Router, private _route: ActivatedRoute) { }
+  constructor(
 
+    private householdService: HouseholdService,
+    private fb: FormBuilder,
+    private _route: ActivatedRoute
+  ) { }
 
-
+  public sucessEdited: boolean = false;
   capabilityForm: FormGroup;
 
   public model: householdDTO;
@@ -25,6 +34,7 @@ export class EditHouseholdComponent implements OnInit {
   public readFamilyHeadDropdown: dropdown[] = [];
   public readFamilyOriginRefDropdown: dropdown[] = [];
   public readPartnersDropdown: dropdown[] = [];
+  private _success = new Subject<string>();
 
   modelForm = this.fb.group({
 
@@ -53,18 +63,17 @@ export class EditHouseholdComponent implements OnInit {
 
   onEdit(): void {
 
-  
 
-     this.householdService.update(JSON.stringify(this.modelForm.value)).subscribe(
-       (response: householdDTO) => {
- 
-         // this.navigateToEdit(response.id);
- 
-       },
-       (error: HttpErrorResponse) => {
-         console.log("erro in HouseholdComponent.onCreate()", error.message)
-       }
-     )
+
+    this.householdService.update(JSON.stringify(this.modelForm.value)).subscribe(
+      (response: householdDTO) => {
+
+        this.SuccessMessage()
+      },
+      (error: HttpErrorResponse) => {
+        console.log("erro in HouseholdComponent.onCreate()", error.message)
+      }
+    )
 
 
   }
@@ -158,6 +167,21 @@ export class EditHouseholdComponent implements OnInit {
         console.log("erro in HouseholdComponent.onKey()", error.message)
       }
     )
+  }
+
+
+
+
+  public async SuccessMessage() {
+   
+   this.sucessEdited = true;
+   setTimeout(() => 
+   {
+    this.sucessEdited = false;
+   },
+   2000);
+
+  
   }
 
 }

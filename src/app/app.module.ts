@@ -19,7 +19,6 @@ import { AppComponent } from './app.component';
 import { SideNavComponent } from './component/side-nav/side-nav.component';
 import { BodyComponent } from './component/body/body.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component'; 
-import { BeneficiaryComponent } from './component/beneficiary/beneficiary.component';
 import { PartnerComponent } from './component/partner/partner.component';
 import { SiteComponent } from './component/site/site.component';
 import { ReportComponent } from './component/report/report.component';
@@ -31,17 +30,21 @@ import { EditHouseholdComponent } from './component/household/edit-household/edi
 import { ViewHouseholdComponent } from './component/household/view-household/view-household.component';
 import { PagingHouseholdComponent } from './component/household/paging-household/paging-household.component';
 
+ 
+import { ToastrModule } from 'ngx-toastr';
+import { PagingBeneficiaryComponent } from './component/beneficiary/paging-beneficiary/paging-beneficiary.component';
+import { SimplepagingBeneficiaryComponent } from './component/beneficiary/simplepaging-beneficiary/simplepaging-beneficiary.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     SideNavComponent,
     BodyComponent,
     DashboardComponent, 
-    BeneficiaryComponent,
     PartnerComponent,
     SiteComponent,
     ReportComponent,
-    CardComponent, CreateHouseholdComponent, EditHouseholdComponent, ViewHouseholdComponent, PagingHouseholdComponent
+    CardComponent, CreateHouseholdComponent, EditHouseholdComponent, ViewHouseholdComponent, PagingHouseholdComponent, PagingBeneficiaryComponent, SimplepagingBeneficiaryComponent
   ],
   imports: [
     BrowserModule,
@@ -49,14 +52,19 @@ import { PagingHouseholdComponent } from './component/household/paging-household
     AppRoutingModule,
     RouterModule,
 
+    BrowserAnimationsModule,
+    
+
     ReactiveFormsModule,
 
     MatSlideToggleModule,
     MatSidenavModule,
     MatToolbarModule,
-    BrowserAnimationsModule,
+  
 
-    HttpClientModule
+    HttpClientModule,
+
+    ToastrModule
   ],
   providers: [HouseholdService],
   bootstrap: [AppComponent]

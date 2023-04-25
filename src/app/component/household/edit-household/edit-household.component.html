@@ -1,0 +1,142 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a [routerLink]="['/','dashboard']">Home</a></li>
+        <li class="breadcrumb-item"><a [routerLink]="['/','household']">Agregados</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Editar agregado</li>
+    </ol>
+</nav>
+
+<hr />
+
+<div class="card mb-2">
+    <div class="card-body">
+        <h4>Editar agregado <span class="badge badge-secondary">Edição</span></h4>
+    </div>
+</div>
+
+<div class="card mb-2">
+    <div class="card-body">
+        <fieldset class="border p-1">
+            <legend class="w-auto mb-0" style="font-size: 14px;">Formuário do agregado</legend>
+
+
+            <form class="m-2" [formGroup]="modelForm">
+                <fieldset class="border p-1">
+                    <legend class="w-auto mb-0 " style="font-size: 14px;">Agregado</legend>
+                    <div class="form-row ml-2">
+                        <div class="form-group col-md-4">
+                            <label for="name">Nome</label>
+                            <input formControlName="name" type="text" class="form-control" id="name"
+                                placeholder="Nome do agregado">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="Endereço">Endereço</label>
+                            <input formControlName="address" name="address" type="texte" class="form-control"
+                                id="Endereço" placeholder="Endereço">
+                        </div>
+                    </div>
+
+
+                    <div class="form-row ml-2">
+                        <div class="form-group col-md-2">
+                            <label for="Bloco">Bloco</label>
+                            <input formControlName="block" class="form-control" id="Bloco" placeholder="Bloco">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="Vizinhança">Vizinhança</label>
+                            <input formControlName="neighborhoodName" type="text" class="form-control" id="Vizinhança"
+                                placeholder="Vizinhança">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="closeplace">Lugar perto de casa</label>
+                            <input formControlName="closePlaceToHome" type="texte" class="form-control" id="closeplace"
+                                placeholder="Lugar perto de casa">
+                        </div>
+                    </div>
+
+                    <div class="form-row ml-2">
+                        <div class="form-group col-md-3">
+                            <label for="Telefone">Telefone</label>
+                            <input formControlName="familyPhoneNumber" type="text" class="form-control" id="inputEmail4"
+                                placeholder="Telefone">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputState">Chefe do agregado</label>
+                            <select formControlName="familyHeadId" id="inputState" class="form-control">
+                                <option selected>Selecione...</option>
+
+                                <option *ngFor="let dropdown of readFamilyHeadDropdown" [ngValue]="dropdown.id">
+                                    {{dropdown.description}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="form-row ml-2">
+
+                        <div class="form-group col-md-3">
+                            <label for="inputState">Origen de refêrencia</label>
+                            <select formControlName="familyOriginRefId" id="inputState" class="form-control">
+                                <option selected>Selecione...</option>
+                                <option *ngFor="let dropdown of readFamilyOriginRefDropdown" [ngValue]="dropdown.id">
+                                    {{dropdown.description}}
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="inputCity">Outras Origens de refêrencia</label>
+                            <input formControlName="otherFamilyOriginRef" type="text" class="form-control"
+                                id="inputCity">
+                        </div>
+
+
+
+                    </div>
+                </fieldset>
+                <fieldset class="border p-1">
+                    <legend class="w-auto mb-0" style="font-size: 14px;">ativista</legend>
+                    <div class="form-row ml-2">
+                        <div class="form-group col-md-3">
+                            <label for="inputState">Activista</label>
+                            <select formControlName="partnerId" id="inputState" class="form-control">
+                                <option selected>Selecione...</option>
+                                <option *ngFor="let dropdown of readPartnersDropdown" [ngValue]="dropdown.id">
+                                    {{dropdown.description}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+
+        </fieldset>
+    </div>
+</div>
+
+
+
+<div class="card mb-2">
+    <div class="card-body m-0">
+
+        <fieldset class="border p-1">
+            <legend class="w-auto mb-0" style="font-size: 14px;">Ações</legend>
+            <button (click)="onEdit()" type="button" class="btn btn-success text-white btn-sm mb-2 ml-2"
+                data-toggle="tooltip" title="Gravar o Agregado">
+
+                <i class="fal fa-save"></i>
+
+            </button>
+
+            <button [routerLink]="['/', 'household-create']" class="btn btn-secondary text-white btn-sm mb-2 ml-2"
+                data-toggle="tooltip" title="Limpar o formuário do agregado">
+
+                <i class="fal fa-quidditch"></i>
+
+            </button>
+
+        </fieldset>
+
+    </div>
+</div>

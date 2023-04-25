@@ -11,7 +11,7 @@ export const navbarData = [
         label: 'Reports'
     },
     {
-        routeLink: 'household',
+        routeLink: 'household-paging',
         icon: 'fal fa-users',
         label: 'Household'
     },

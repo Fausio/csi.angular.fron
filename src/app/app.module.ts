@@ -13,13 +13,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 
-import {HttpClientModule } from  '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SideNavComponent } from './component/side-nav/side-nav.component';
 import { BodyComponent } from './component/body/body.component';
-import { DashboardComponent } from './component/dashboard/dashboard.component';
-import { HouseholdComponent } from './component/household/household.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component'; 
 import { BeneficiaryComponent } from './component/beneficiary/beneficiary.component';
 import { PartnerComponent } from './component/partner/partner.component';
 import { SiteComponent } from './component/site/site.component';
@@ -28,18 +27,21 @@ import { HouseholdService } from './service/household/household.service';
 import { CardComponent } from './component/helper/card/card.component';
 import { CreateHouseholdComponent } from './component/household/create-household/create-household.component';
 
+import { EditHouseholdComponent } from './component/household/edit-household/edit-household.component';
+import { ViewHouseholdComponent } from './component/household/view-household/view-household.component';
+import { PagingHouseholdComponent } from './component/household/paging-household/paging-household.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     SideNavComponent,
-     BodyComponent,
-     DashboardComponent,
-     HouseholdComponent,
-      BeneficiaryComponent,
-      PartnerComponent,
-       SiteComponent,
-       ReportComponent,
-       CardComponent, CreateHouseholdComponent
+    BodyComponent,
+    DashboardComponent, 
+    BeneficiaryComponent,
+    PartnerComponent,
+    SiteComponent,
+    ReportComponent,
+    CardComponent, CreateHouseholdComponent, EditHouseholdComponent, ViewHouseholdComponent, PagingHouseholdComponent
   ],
   imports: [
     BrowserModule,

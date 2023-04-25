@@ -6,11 +6,11 @@ import { householdDTO } from 'src/app/interface/household/household.model';
 import { HouseholdService } from 'src/app/service/household/household.service';
 
 @Component({
-  selector: 'app-household',
-  templateUrl: './household.component.html',
-  styleUrls: ['./household.component.css']
+  selector: 'app-paging-household',
+  templateUrl: './paging-household.component.html',
+  styleUrls: ['./paging-household.component.css']
 })
-export class HouseholdComponent implements OnInit {
+export class PagingHouseholdComponent implements OnInit {
 
   constructor(private householdService: HouseholdService, private modalService: NgbModal) { }
 
@@ -26,7 +26,7 @@ export class HouseholdComponent implements OnInit {
       (response: householdPage) => {
 
         this.models = response;
-        this.current = 1; 
+        this.current = 1;
       },
       (error: HttpErrorResponse) => {
         console.log("erro in HouseholdComponent.Read()", error.message)
@@ -43,8 +43,8 @@ export class HouseholdComponent implements OnInit {
       (response: householdPage) => {
 
         this.models = response;
-        this.current = pageNumber 
-        
+        this.current = pageNumber
+
       },
       (error: HttpErrorResponse) => {
         console.log("erro in HouseholdComponent.paging()", error.message)
@@ -78,7 +78,7 @@ export class HouseholdComponent implements OnInit {
     this.householdService.search(this.searchText).subscribe(
       (response: householdPage) => {
 
-        console.log("onKey core",response);
+        console.log("onKey core", response);
         this.models = response;
         this.current = 1;
 

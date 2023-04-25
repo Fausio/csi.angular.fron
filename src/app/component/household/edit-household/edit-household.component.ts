@@ -1,20 +1,23 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
+import { dropdown } from 'src/app/interface/dto/dropdown';
 import { householdDTO } from 'src/app/interface/household/household.model';
 import { HouseholdService } from 'src/app/service/household/household.service';
-import { dropdown } from '../../../interface/dto/dropdown'
-import { HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { ActivatedRoute, ParamMap } from '@angular/router';
-import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-create-household',
-  templateUrl: './create-household.component.html',
-  styleUrls: ['./create-household.component.css']
+  selector: 'app-edit-household',
+  templateUrl: './edit-household.component.html',
+  styleUrls: ['./edit-household.component.css']
 })
-export class CreateHouseholdComponent implements OnInit {
+export class EditHouseholdComponent implements OnInit{
 
   constructor(private householdService: HouseholdService, private fb: FormBuilder, private route: Router) { }
+ 
+ 
+
+
 
   public model: householdDTO;
 
@@ -39,14 +42,15 @@ export class CreateHouseholdComponent implements OnInit {
   });
 
 
-  onCreate(): void {
 
- 
- 
+  onEdit(): void {
+
+
+
     this.householdService.create(JSON.stringify(this.modelForm.value)).subscribe(
       (response: householdDTO) => {
 
-        this.navigateToEdit(response.id);
+        // this.navigateToEdit(response.id);
 
       },
       (error: HttpErrorResponse) => {
@@ -58,10 +62,11 @@ export class CreateHouseholdComponent implements OnInit {
   }
 
 
-  navigateToEdit(id: number) {
-    this.route.navigateByUrl('/household-edit/' + id);
+  ngOnInit(): void {
+    this.readPartners();
+    this.readFamilyOriginRef();
+    this.readFamilyHead();
   }
-
 
   readFamilyHead(): void {
     this.householdService.readFamilyHead().subscribe(
@@ -100,12 +105,6 @@ export class CreateHouseholdComponent implements OnInit {
         console.log("erro in HouseholdComponent.onKey()", error.message)
       }
     )
-  }
-
-  ngOnInit(): void {
-    this.readPartners();
-    this.readFamilyOriginRef();
-    this.readFamilyHead();
   }
 
 }

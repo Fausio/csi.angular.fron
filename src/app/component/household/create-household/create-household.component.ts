@@ -3,7 +3,7 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { householdDTO } from 'src/app/interface/household/household.model';
 import { HouseholdService } from 'src/app/service/household/household.service';
 import { dropdown } from '../../../interface/dto/dropdown'
-import { HttpErrorResponse } from '@angular/common/http';
+import { HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-create-household',
@@ -62,17 +62,22 @@ export class CreateHouseholdComponent implements OnInit {
        
       } */
 
+      const httpOptions = {
+        headers: new HttpHeaders({'Content-Type': 'application/json'})
+      }
 
-    /*     this.householdService.create(JSON.stringify(this.modelForm.value)).subscribe(
-          (response: householdDTO) => {
-    
-            console.log("onCreate", this.householdService)
-    
-          },
-          (error: HttpErrorResponse) => {
-            console.log("erro in HouseholdComponent.onCreate()", error.message)
-          }
-        ) */
+      
+
+    this.householdService.create(JSON.stringify(this.modelForm.value)).subscribe(
+      (response: householdDTO) => {
+
+        console.log("onCreate", this.householdService)
+
+      },
+      (error: HttpErrorResponse) => {
+        console.log("erro in HouseholdComponent.onCreate()", error.message)
+      }
+    )
   }
 
 

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { householdPage } from '../../interface/household/householdPage';
 import { dropdown } from 'src/app/interface/dto/dropdown';
 import { householdDTO } from 'src/app/interface/household/household.model';
@@ -15,12 +15,20 @@ export class HouseholdService {
 
   private baseUrl = environment.apiBaseUrl;
 
+  
+
   public read(): Observable<householdPage> {
     return this.http.get<householdPage>(`${this.baseUrl}/household`);
   }
 
   public create(model: any): Observable<householdDTO> {
-    return this.http.post<householdDTO>(`${this.baseUrl}/household`, model);
+
+    const httpOptions = {
+      headers: new HttpHeaders({'Content-Type': 'application/json'})
+    }
+
+
+    return this.http.post<householdDTO>(`${this.baseUrl}/household`, model,httpOptions);
   }
 
 

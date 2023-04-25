@@ -103,6 +103,8 @@ export class EditHouseholdComponent implements OnInit {
     this.householdService.readById(id).subscribe(
       (response: householdDTO) => {
 
+        this.model = response;
+
         this.modelForm.setValue({
 
           id: response.id,
@@ -173,15 +175,14 @@ export class EditHouseholdComponent implements OnInit {
 
 
   public async SuccessMessage() {
-   
-   this.sucessEdited = true;
-   setTimeout(() => 
-   {
-    this.sucessEdited = false;
-   },
-   2000);
 
-  
+    this.sucessEdited = true;
+    setTimeout(() => {
+      this.sucessEdited = false;
+    },
+      2000);
+
+
   }
 
 }

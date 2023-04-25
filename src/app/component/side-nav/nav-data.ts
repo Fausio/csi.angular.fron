@@ -16,7 +16,7 @@ export const navbarData = [
         label: 'Household'
     },
     {
-        routeLink: 'beneficiary',
+        routeLink: 'beneficiary-paging',
         icon: 'fal fa-child',
         label: 'Beneficiarys'
     },

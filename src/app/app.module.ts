@@ -35,6 +35,10 @@ import { ToastrModule } from 'ngx-toastr';
 import { PagingBeneficiaryComponent } from './component/beneficiary/paging-beneficiary/paging-beneficiary.component';
 import { SimplepagingBeneficiaryComponent } from './component/beneficiary/simplepaging-beneficiary/simplepaging-beneficiary.component';
 
+
+//import * as CanvasJSAngularChart from '../assets/canvasjs.angular.component';
+//var CanvasJSChart = CanvasJSAngularChart.CanvasJSChart;
+
 @NgModule({
   declarations: [
     AppComponent,

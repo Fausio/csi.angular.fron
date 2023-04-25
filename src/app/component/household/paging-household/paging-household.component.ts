@@ -26,9 +26,7 @@ export class PagingHouseholdComponent implements OnInit {
       (response: householdPage) => {
 
         this.models = response;
-        this.current = 1;
-
-        console.log("onKey start",this.models )
+        this.current = 1; 
       },
       (error: HttpErrorResponse) => {
         console.log("erro in HouseholdComponent.Read()", error.message)
@@ -73,6 +71,7 @@ export class PagingHouseholdComponent implements OnInit {
     this.Read();
   }
 
+
   onKey(event: Event): void {
 
 
@@ -87,10 +86,7 @@ export class PagingHouseholdComponent implements OnInit {
       (error: HttpErrorResponse) => {
         console.log("erro in HouseholdComponent.onKey()", error.message)
       }
-    )
-
-     
-
+    ) 
   }
 
 }

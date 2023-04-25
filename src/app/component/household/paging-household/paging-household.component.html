@@ -58,18 +58,18 @@
                              <td>{{data.address}}</td>
                              <td>
                                   <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                       <label class="btn btn-success  btn-sm">
+                                       <a  routerLink="/household-edit/{{data.id}}" class="btn btn-success  btn-sm text-white" >
                                             <input type="radio" name="options" id="option1" autocomplete="off" checked>
                                             <i class="far fa-edit"></i>
-                                       </label>
-                                       <label class="btn btn-secondary btn-sm">
+                                       </a>
+                                       <a class="btn btn-secondary btn-sm text-white">
                                             <input type="radio" name="options" id="option2" autocomplete="off">
                                             <i class="far fa-eye"></i>
-                                       </label>
-                                       <label class="btn btn-danger btn-sm">
+                                       </a>
+                                       <a class="btn btn-danger btn-sm text-white">
                                             <input type="radio" name="options" id="option3" autocomplete="off">
                                             <i class="fas fa-trash-alt"></i>
-                                       </label>
+                                       </a>
                                   </div>
                              </td>
                         </tr>

@@ -94,7 +94,7 @@ export class CreateHouseholdComponent implements OnInit {
       (response: dropdown[]) => {
 
         this.readPartnersDropdown = response;
-        console.log("erro in HouseholdComponent.onKey()", response)
+        
       },
       (error: HttpErrorResponse) => {
         console.log("erro in HouseholdComponent.onKey()", error.message)

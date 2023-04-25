@@ -15,20 +15,35 @@ export class HouseholdService {
 
   private baseUrl = environment.apiBaseUrl;
 
-  
+
 
   public read(): Observable<householdPage> {
     return this.http.get<householdPage>(`${this.baseUrl}/household`);
   }
 
+  public readById(id: number): Observable<householdDTO> {
+    return this.http.get<householdDTO>(`${this.baseUrl}/household/` + id);
+  }
+
+
   public create(model: any): Observable<householdDTO> {
 
     const httpOptions = {
-      headers: new HttpHeaders({'Content-Type': 'application/json'})
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     }
 
 
-    return this.http.post<householdDTO>(`${this.baseUrl}/household`, model,httpOptions);
+    return this.http.post<householdDTO>(`${this.baseUrl}/household`, model, httpOptions);
+  }
+
+
+  public update(model: any): Observable<householdDTO> {
+
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    }
+ 
+    return this.http.put<householdDTO>(`${this.baseUrl}/household`, model, httpOptions);
   }
 
 

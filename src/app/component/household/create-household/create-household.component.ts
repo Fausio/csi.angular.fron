@@ -31,7 +31,7 @@ export class CreateHouseholdComponent implements OnInit {
 
     otherFamilyOriginRef: [''],
 
-    partnerId: [0],
+    partnerId: [0,],
     familyHeadId: [0],
     familyOriginRefId: [0],
   });
@@ -39,18 +39,40 @@ export class CreateHouseholdComponent implements OnInit {
 
   onCreate(): void {
 
+
+    console.log(".modelForm.value", this.modelForm.value);
     console.log("JSON.stringify", JSON.stringify(this.modelForm.value));
 
-    this.householdService.create(JSON.stringify(this.modelForm.value)).subscribe(
-      (response: householdDTO) => {
 
-        console.log("onCreate", this.householdService)
 
-      },
-      (error: HttpErrorResponse) => {
-        console.log("erro in HouseholdComponent.onCreate()", error.message)
-      }
-    )
+
+    /* {
+    
+      "name":"Nome",
+      "address":"Nome",
+      "otherFamilyOriginRef":"Diária",
+      "neighborhoodName":"Vizinhança",
+      "block":"2",
+      "familyPhoneNumber":"872202323",
+      "closePlaceToHome":"Lugar perto de casa",
+      
+      "partnerId":7,
+      "familyHeadId":6,
+      "familyOriginRefId":6 
+       
+      } */
+
+
+    /*     this.householdService.create(JSON.stringify(this.modelForm.value)).subscribe(
+          (response: householdDTO) => {
+    
+            console.log("onCreate", this.householdService)
+    
+          },
+          (error: HttpErrorResponse) => {
+            console.log("erro in HouseholdComponent.onCreate()", error.message)
+          }
+        ) */
   }
 
 

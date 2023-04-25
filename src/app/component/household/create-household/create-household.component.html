@@ -37,9 +37,9 @@
 
 
           <div class="form-row ml-2">
-            <div class="form-group col-md-1">
+            <div class="form-group col-md-2">
               <label for="Bloco">Bloco</label>
-              <input formControlName="block" type="number" class="form-control" id="Bloco" placeholder="Bloco">
+              <input formControlName="block"  class="form-control" id="Bloco" placeholder="Bloco">
             </div>
             <div class="form-group col-md-3">
               <label for="Vizinhança">Vizinhança</label>
@@ -54,17 +54,17 @@
           </div>
 
           <div class="form-row ml-2">
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-3">
               <label for="Telefone">Telefone</label>
               <input formControlName="familyPhoneNumber" type="number" class="form-control" id="inputEmail4"
                 placeholder="Telefone">
             </div>
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-4">
               <label for="inputState">Chefe do agregado</label>
               <select formControlName="familyHeadId" id="inputState" class="form-control">
                 <option selected>Selecione...</option>
 
-                <option *ngFor="let dropdown of readFamilyHeadDropdown" value="{{dropdown.id}}">{{dropdown.description}}
+                <option *ngFor="let dropdown of readFamilyHeadDropdown" [ngValue]="dropdown.id">{{dropdown.description}}
                 </option>
               </select>
             </div>
@@ -77,13 +77,13 @@
               <label for="inputState">Origen de refêrencia</label>
               <select formControlName="familyOriginRefId" id="inputState" class="form-control">
                 <option selected>Selecione...</option>
-                <option *ngFor="let dropdown of readFamilyOriginRefDropdown" value="{{dropdown.id}}">
+                <option *ngFor="let dropdown of readFamilyOriginRefDropdown" [ngValue]="dropdown.id">
                   {{dropdown.description}}
                 </option>
               </select>
             </div>
 
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
               <label for="inputCity">Outras Origens de refêrencia</label>
               <input formControlName="otherFamilyOriginRef" type="text" class="form-control" id="inputCity">
             </div>
@@ -99,7 +99,7 @@
               <label for="inputState">Activista</label>
               <select formControlName="partnerId" id="inputState" class="form-control">
                 <option selected>Selecione...</option>
-                <option *ngFor="let dropdown of readPartnersDropdown" value="{{dropdown.id}}">
+                <option *ngFor="let dropdown of readPartnersDropdown" [ngValue]="dropdown.id">
                   {{dropdown.description}}
                 </option>
               </select>

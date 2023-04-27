@@ -1,5 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { beneficiaryPage } from 'src/app/interface/beneficiary/beneficiaryPage';
 import { BeneficiaryService } from 'src/app/service/beneficiary/beneficiary.service';
 
@@ -90,4 +91,49 @@ export class SimplepagingBeneficiaryComponent implements OnInit {
       }
     )
   }
+
+
+
+
+  OnCreateBen(model: NgForm): void {
+
+    /*     this.EmployeeService.Create(model.value).subscribe(
+          (response: beneficiaryDTO) => {
+            this.Read();
+          }, (error: HttpErrorResponse) => {
+            alert(error.message)
+          }
+        ) */
+    
+        document.getElementById('closeAddEmployeeModal')?.click();
+      }
+
+
+      public openModal(model?: any, mode?: String) {
+
+        const mainDiv = document.getElementById("employeesRow"); // will receive the btn of the modal
+    
+        const btn = document.createElement('button'); // btn of the modal
+        btn.type = 'button' // to remve submit event (to be a simple btn)
+        btn.style.display = 'none'; // hide de btn
+        btn.setAttribute('data-toggle', 'modal') // necessary for pop up works
+    
+        if (model != null) {
+         //  this.SelectedEmployee = model;
+        }
+    
+        if (mode === 'createBen') {
+          btn.setAttribute('data-target', '#createBen');
+        }
+        if (mode === 'updateEmployee') {
+          btn.setAttribute('data-target', '#updateEmployee');
+        }
+        if (mode === 'deleteEmployee') {
+          btn.setAttribute('data-target', '#deleteEmployee');
+        }
+    
+        mainDiv?.appendChild(btn);
+        btn.click();
+      }
+
 }

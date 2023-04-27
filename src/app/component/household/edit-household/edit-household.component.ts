@@ -8,7 +8,8 @@ import { HouseholdService } from 'src/app/service/household/household.service';
 import { formatDate } from '@angular/common'
 import { ToastrService } from 'ngx-toastr';
 import { Subject, delay } from 'rxjs';
-
+import { NgForm } from '@angular/forms';
+import { beneficiaryDTO } from 'src/app/interface/beneficiary/beneficiary.model';
 
 
 @Component({
@@ -181,8 +182,13 @@ export class EditHouseholdComponent implements OnInit {
       this.sucessEdited = false;
     },
       2000);
-
-
   }
+
+
+
+
+
+
+
 
 }
